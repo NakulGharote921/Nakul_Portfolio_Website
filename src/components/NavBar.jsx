@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import logo from '../assets/1780166454010-removebg-preview.png'
 
-function NavBar({ theme, onToggleTheme, themeLabel }) {
+function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const linkClassName =
     'block px-4 py-2 text-on-surface-variant font-medium hover:text-primary rounded-full hover:bg-surface-container-low/80 transition-all duration-200'
@@ -79,20 +79,6 @@ function NavBar({ theme, onToggleTheme, themeLabel }) {
             </NavLink>
           </nav>
 
-          <div className="hidden md:flex items-center gap-sm shrink-0">
-            <button
-              aria-label={themeLabel}
-              className="inline-flex items-center gap-2 rounded-full border border-border-light bg-surface-container-low px-4 py-2 text-sm font-semibold text-on-surface-variant shadow-sm hover:-translate-y-0.5 hover:text-on-surface hover:shadow-premium"
-              onClick={onToggleTheme}
-              type="button"
-            >
-              <span className="material-symbols-outlined text-[18px]" data-icon={theme === 'dark' ? 'light_mode' : 'dark_mode'}>
-                {theme === 'dark' ? 'light_mode' : 'dark_mode'}
-              </span>
-              {theme === 'dark' ? 'Light' : 'Dark'}
-            </button>
-          </div>
-
           <button
             aria-expanded={isMenuOpen}
             aria-label="Toggle navigation menu"
@@ -154,17 +140,6 @@ function NavBar({ theme, onToggleTheme, themeLabel }) {
               >
                 Contact
               </NavLink>
-              <button
-                aria-label={themeLabel}
-                className="mt-2 inline-flex items-center justify-center gap-2 rounded-2xl border border-border-light bg-surface-container-low px-4 py-3 text-sm font-semibold text-on-surface-variant"
-                onClick={onToggleTheme}
-                type="button"
-              >
-                <span className="material-symbols-outlined text-[18px]" data-icon={theme === 'dark' ? 'light_mode' : 'dark_mode'}>
-                  {theme === 'dark' ? 'light_mode' : 'dark_mode'}
-                </span>
-                {theme === 'dark' ? 'Light mode' : 'Dark mode'}
-              </button>
             </div>
           </div>
         ) : null}

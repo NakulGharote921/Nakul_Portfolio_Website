@@ -57,7 +57,7 @@ npm run dev
 1. Clone the repository to your local machine.
 2. Install dependencies using `npm install`.
 3. Start the development server with `npm run dev`.
-4. Open the local URL shown in the terminal, usually `http://localhost:5173`.
+4. Open the local URL shown in the terminal, usually `https://nakul-portfolio-website.vercel.app`.
 5. Edit the source files in `src/` to customize your portfolio content.
 
 ## Project Structure
@@ -106,13 +106,13 @@ This project is licensed under the MIT License.
 - **Name:** [Nakul Gharote]
 - **LinkedIn:** [https://www.linkedin.com/in/nakul-gharote/]
 - **GitHub:** [https://github.com/NakulGharote921]
-- **Portfolio Website:** [Your Portfolio URL]
+- **Portfolio Website:** [(https://nakul-portfolio-website.vercel.app)]
 
 ---
 
 ## Links
 
-- **Live Demo:** [DEMO_LINK]
+- **Live Demo:** [(https://nakul-portfolio-website.vercel.app)]
 - **GitHub Repository:** [git@github.com:NakulGharote921/Nakul_Portfolio_Website.git]
 "# Nakul_Portfolio_Website" 
 "# Nakul_Portfolio_Website" 

@@ -181,13 +181,10 @@ function CoursesSection() {
               <div className="flex-grow text-center md:text-left">
                 <div className="flex gap-xs mb-xs justify-center md:justify-start">
                   <span className="bg-primary/10 text-primary-container px-xs py-base rounded-full font-label-sm text-label-sm">
-                    AI/LLMs
+                    Python
                   </span>
                   <span className="bg-primary/10 text-primary-container px-xs py-base rounded-full font-label-sm text-label-sm">
-                    Python 
-                  </span>
-                  <span className="bg-primary/10 text-primary-container px-xs py-base rounded-full font-label-sm text-label-sm">
-                   Java
+                    Java
                   </span>
                   <span className="bg-primary/10 text-primary-container px-xs py-base rounded-full font-label-sm text-label-sm">
                     JavaScript
@@ -197,11 +194,10 @@ function CoursesSection() {
 
                 </div>
                 <h3 className="font-headline-md text-headline-md text-on-surface">
-                  Applied Artificial Intelligence / Large Language Module 
+                  Applied Software Development
                 </h3>
                 <p className="font-body-md text-body-md text-on-surface-variant mt-xs">
-                 Applied Artificial Intelligence / Large Language Models
-Dive deep into Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), Natural Language Processing (NLP), and Computer Vision using PyTorch and TensorFlow.
+                  Build practical, production-ready applications with clean architecture, modern frontend tooling, and scalable backend patterns.
                 </p>
               </div>
               <button className="border border-primary-container text-primary-container px-sm py-xs rounded-lg font-label-md text-label-md hover:bg-surface-container-low transition-colors w-full md:w-auto mt-sm md:mt-0">
