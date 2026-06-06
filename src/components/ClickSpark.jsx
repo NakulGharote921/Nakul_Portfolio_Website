@@ -1,4 +1,4 @@
-import { useRef, useEffect, useCallback } from 'react';
+import { useRef, useEffect, useCallback, useState } from 'react';
 
 const ClickSpark = ({
   sparkColor = '#fff',
@@ -13,6 +13,26 @@ const ClickSpark = ({
   const canvasRef = useRef(null);
   const sparksRef = useRef([]);
   const startTimeRef = useRef(null);
+
+  // PERFORMANCE: Disable on mobile to reduce canvas overhead
+  const [isEnabled, setIsEnabled] = useState(true);
+
+  useEffect(() => {
+    // Disable on mobile
+    if (typeof window !== 'undefined') {
+      const isMobile = window.innerWidth < 1024;
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      
+      if (isMobile || prefersReduced) {
+        setIsEnabled(false);
+      }
+    }
+  }, []);
+
+  // Return children without canvas on mobile
+  if (!isEnabled) {
+    return <div className="relative w-full h-full">{children}</div>;
+  }
 
   useEffect(() => {
     const canvas = canvasRef.current;

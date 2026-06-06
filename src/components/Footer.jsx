@@ -29,39 +29,39 @@ function Footer() {
   return (
     <div>
       {/* Footer (Generated from JSON) */}
-        <footer className="w-full bg-surface-container-lowest border-t border-border-light mt-xl">
-          <div className="w-full py-xl px-sm md:px-lg max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-md">
+        <footer className="w-full bg-surface-container-lowest border-t border-border-light mt-md sm:mt-lg md:mt-xl">
+          <div className="w-full py-sm sm:py-md md:py-xl px-sm sm:px-md md:px-lg max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-sm sm:gap-md md:gap-md">
             {/* Brand & Copyright */}
-            <div className="flex flex-col items-center md:items-start gap-sm">
-              <div className="font-headline-md text-headline-md font-bold text-on-surface">
+            <div className="flex flex-col items-center md:items-start gap-xs sm:gap-sm text-center md:text-left">
+              <div className="font-headline-sm sm:font-headline-md text-headline-sm sm:text-headline-md font-bold text-on-surface">
                Nakul Gharote
               </div>
-              <p className="font-body-md text-body-md text-on-surface-variant">
+              <p className="font-body-xs sm:font-body-sm text-body-xs sm:text-body-sm text-on-surface-variant text-sm">
                 © 2026 Nakul Gharote Education Inc. All rights reserved.
               </p>
             </div>
             {/* Links */}
-            <nav className="flex flex-wrap justify-center gap-md">
+            <nav className="flex flex-wrap justify-center gap-xs sm:gap-sm md:gap-md">
               <a
-                className="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-all"
+                className="font-label-xs sm:font-label-sm text-label-xs sm:text-label-sm text-on-surface-variant hover:text-secondary transition-all"
                 href="#"
               >
                 Privacy Policy
               </a>
               <a
-                className="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-all"
+                className="font-label-xs sm:font-label-sm text-label-xs sm:text-label-sm text-on-surface-variant hover:text-secondary transition-all"
                 href="#"
               >
                 Terms of Service
               </a>
               <a
-                className="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-all"
+                className="font-label-xs sm:font-label-sm text-label-xs sm:text-label-sm text-on-surface-variant hover:text-secondary transition-all"
                 href="#"
               >
                 Contact Us
               </a>
               <a
-                className="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-all"
+                className="font-label-xs sm:font-label-sm text-label-xs sm:text-label-sm text-on-surface-variant hover:text-secondary transition-all"
                 href="#"
               >
                 Careers
@@ -69,8 +69,8 @@ function Footer() {
             </nav>
           </div>
 
-          <div className="border-t border-border-light py-md md:py-lg">
-            <div className="max-w-container-max mx-auto px-sm md:px-lg">
+          <div className="border-t border-border-light py-xs sm:py-sm md:py-md lg:py-lg">
+            <div className="max-w-container-max mx-auto px-sm sm:px-md md:px-lg">
               <LogoLoop
                 logos={footerLogos}
                 speed={100}

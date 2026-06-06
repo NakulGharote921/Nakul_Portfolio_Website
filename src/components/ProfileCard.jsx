@@ -62,8 +62,13 @@ const ProfileCardComponent = ({
   const enterTimerRef = useRef(null);
   const leaveRafRef = useRef(null);
 
+  // PERFORMANCE: Disable tilt on mobile/tablet to reduce CPU usage
+  const shouldEnableTilt = typeof window !== 'undefined' && 
+                           window.innerWidth >= 1024 && 
+                           enableTilt;
+
   const tiltEngine = useMemo(() => {
-    if (!enableTilt) return null;
+    if (!shouldEnableTilt) return null;
 
     let rafId = null;
     let running = false;
@@ -172,7 +177,7 @@ const ProfileCardComponent = ({
         lastTs = 0;
       }
     };
-  }, [enableTilt]);
+  }, [shouldEnableTilt]);
 
   const getOffsets = (evt, el) => {
     const rect = el.getBoundingClientRect();

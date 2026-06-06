@@ -9,14 +9,14 @@ function NavBar() {
 
   return (
     <div className="relative">
-      <header className="sticky top-0 z-50 border-b border-border-light bg-surface-card/80 backdrop-blur-xl shadow-[0_10px_35px_rgba(15,23,42,0.06)]">
-        <div className="mx-auto flex min-h-18 w-full max-w-container-max items-center justify-between px-sm py-sm md:min-h-20 md:px-lg">
+      <header className="sticky top-0 z-50 border-b border-border-light bg-surface-card/80 flex backdrop-blur-xl shadow-[0_10px_35px_rgba(15,23,42,0.06)]">
+      <img alt="Nakul Gharote logo" className="h-10 sm:h-12 w-16 sm:w-20 object-cover m-2 sm:m-3" src={logo} />
+        <div className="mx-auto flex min-h-16 sm:min-h-18 md:min-h-20 w-full max-w-container-max items-center justify-between px-xs sm:px-sm md:px-lg py-xs sm:py-sm md:py-sm">
           <NavLink
             to="/"
             className="shrink-0 flex items-center gap-2 font-black leading-none text-primary min-w-0"
           >
-            <img alt="Nakul Gharote logo" className="h-12 w-12 rounded-2xl object-cover shadow-lg ring-1 ring-border-light" src={logo} />
-            <span className="font-display text-base sm:text-2xl md:text-3xl truncate max-w-[9rem] sm:max-w-none">
+            <span className="font-display text-sm sm:text-base md:text-2xl lg:text-3xl truncate max-w-[8rem] sm:max-w-[10rem] md:max-w-none">
               Nakul Gharote
             </span>
           </NavLink>
@@ -82,18 +82,18 @@ function NavBar() {
           <button
             aria-expanded={isMenuOpen}
             aria-label="Toggle navigation menu"
-            className="md:hidden shrink-0 inline-flex items-center justify-center rounded-full border border-border-light bg-surface-container-low p-2 text-on-surface-variant hover:text-on-surface"
+            className="lg:hidden shrink-0 inline-flex items-center justify-center rounded-full border border-border-light bg-surface-container-low p-1 sm:p-2 text-on-surface-variant hover:text-on-surface text-sm sm:text-base"
             onClick={() => setIsMenuOpen((open) => !open)}
           >
-            <span className="material-symbols-outlined text-[20px]" data-icon="menu">
+            <span className="material-symbols-outlined text-[18px] sm:text-[20px]" data-icon="menu">
               {isMenuOpen ? 'close' : 'menu'}
             </span>
           </button>
         </div>
 
         {isMenuOpen ? (
-          <div className="md:hidden border-t border-border-light bg-surface-card/95 backdrop-blur-xl">
-            <div className="mx-auto grid max-w-container-max gap-1 px-sm py-sm">
+          <div className="lg:hidden border-t border-border-light bg-surface-card/95 backdrop-blur-xl">
+            <div className="mx-auto grid max-w-container-max gap-1 px-xs sm:px-sm md:px-md py-xs sm:py-sm md:py-md">
               <NavLink
                 to="/"
                 className={({ isActive }) =>

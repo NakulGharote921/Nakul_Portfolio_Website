@@ -1,5 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&family=Cormorant+Garamond:wght@600;700&display=swap');
 @import "tailwindcss";
+
+/* Fallback fonts reduce FOUT/FOIT */
+@font-face {
+  font-family: 'Manrope';
+  src: local('Manrope'), local('Arial');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: local('Cormorant Garamond'), local('Georgia');
+  font-display: swap;
+}
 
 @theme {
   --color-surface-main: #f6f2ea;
@@ -25,17 +38,26 @@
 
 @layer base {
   html {
-    scroll-behavior: smooth;
+    scroll-behavior: auto;
     color-scheme: light;
+  }
+  
+  /* Smooth scroll only on desktop */
+  @media (min-width: 1024px) {
+    html {
+      scroll-behavior: smooth;
+    }
   }
 
   body {
     overflow-x: hidden;
     min-width: 320px;
-    background:
-      radial-gradient(circle at top left, color-mix(in srgb, var(--color-primary) 10%, transparent), transparent 38%),
-      radial-gradient(circle at top right, color-mix(in srgb, var(--color-accent) 12%, transparent), transparent 34%),
-      var(--color-surface-main);
+    background-color: var(--color-surface-main);
+    background-image:
+      radial-gradient(circle at top left, rgb(21, 75, 95, 0.1), transparent 38%),
+      radial-gradient(circle at top right, rgb(213, 140, 59, 0.12), transparent 34%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     color: var(--color-on-surface);
     font-family: var(--font-sans);
     transition: background-color 260ms ease, color 260ms ease;
@@ -58,12 +80,36 @@
   input,
   textarea,
   select {
-    transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+    transition: color 120ms ease, background-color 120ms ease;
+  }
+
+  /* Only animate on focus/hover */
+  a:hover,
+  button:hover,
+  input:focus,
+  textarea:focus,
+  select:focus {
+    transition: color 120ms ease, background-color 120ms ease;
   }
 
   :focus-visible {
     outline: 2px solid var(--color-primary-container);
     outline-offset: 3px;
+  }
+
+  /* Disable animations on motion-reduce preference */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto !important;
+    }
+    
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 

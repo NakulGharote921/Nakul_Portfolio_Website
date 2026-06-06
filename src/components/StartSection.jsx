@@ -68,14 +68,14 @@ function StartSection() {
   return (
     <div>
       {/* Stats Section */}
-      <section ref={sectionRef} className="w-full bg-surface-card border-y border-border-light py-lg">
-        <div className="max-w-container-max mx-auto px-sm md:px-lg grid grid-cols-2 md:grid-cols-4 gap-md divide-x divide-border-light text-center fade-in-section is-visible">
+      <section ref={sectionRef} className="w-full bg-surface-card border-y border-border-light py-md sm:py-md md:py-lg">
+        <div className="max-w-container-max mx-auto px-sm sm:px-md md:px-lg grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-xs sm:gap-sm md:gap-md divide-x divide-border-light text-center fade-in-section is-visible">
           {stats.map(stat => (
-            <div key={stat.label} className="flex flex-col items-center">
-              <h3 className="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-primary-container font-bold">
+            <div key={stat.label} className="flex flex-col items-center py-xs sm:py-sm md:py-md">
+              <h3 className="font-display-md-mobile text-display-md-mobile sm:font-display-lg-mobile sm:text-display-lg-mobile md:font-display-lg md:text-display-lg text-primary-container font-bold">
                 <Counter value={stat.value} suffix={stat.suffix} decimals={stat.decimals ?? 0} active={isVisible} />
               </h3>
-              <p className="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mt-xs">
+              <p className="font-label-xs text-label-xs sm:font-label-md sm:text-label-md text-on-surface-variant uppercase tracking-wider mt-xs">
                 {stat.label}
               </p>
             </div>
